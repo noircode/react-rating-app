@@ -1,13 +1,12 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import colors from './utils/color-data.json';
+import { ColorProvider } from './Hooks/color-hooks';
+// eslint-disable-next-line import/no-cycle
 import App from './App';
 import './index.css';
 
-export const ColorContext = createContext();
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ColorContext.Provider value={{ colors }}>
+  <ColorProvider>
     <App />
-  </ColorContext.Provider>,
+  </ColorProvider>,
 );
